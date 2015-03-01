@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD67859E-343D-43D0-AE53-0FC73E9942E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ptv.Timetable.Api</RootNamespace>
+    <AssemblyName>Ptv.Timetable.Api</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Converters\PointsOfInterestLocationsConverter.cs" />
+    <Compile Include="Converters\SearchResponseConverter.cs" />
+    <Compile Include="Converters\StopsForLineConverter.cs" />
+    <Compile Include="Converters\StopsNearbyConverter.cs" />
+    <Compile Include="Converters\TimetableFlagConverter.cs" />
+    <Compile Include="Direction.cs" />
+    <Compile Include="Requests\IPtvRequest.cs" />
+    <Compile Include="IPtvTimetableService.cs" />
+    <Compile Include="Line.cs" />
+    <Compile Include="Outlet.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="PointOfInterestType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PtvConstants.cs" />
+    <Compile Include="PtvTimetableException.cs" />
+    <Compile Include="PtvTimetableService.cs" />
+    <Compile Include="RequestSigner.cs" />
+    <Compile Include="Requests\BroadNextDeparturesRequest.cs" />
+    <Compile Include="Requests\HealthCheckRequest.cs" />
+    <Compile Include="Requests\PointsOfInterestRequest.cs" />
+    <Compile Include="Requests\SearchRequest.cs" />
+    <Compile Include="Requests\SpecificNextDeparturesRequest.cs" />
+    <Compile Include="Requests\StoppingPatternRequest.cs" />
+    <Compile Include="Requests\StopsForLineRequest.cs" />
+    <Compile Include="Requests\StopsNearbyRequest.cs" />
+    <Compile Include="Responses\HealthCheckResponse.cs" />
+    <Compile Include="Responses\NextDeparturesResponse.cs" />
+    <Compile Include="Responses\PointsOfInterestResponse.cs" />
+    <Compile Include="Responses\SearchResponse.cs" />
+    <Compile Include="Responses\StoppingPatternResponse.cs" />
+    <Compile Include="Responses\StopsForLineResponse.cs" />
+    <Compile Include="Responses\StopsNearbyResponse.cs" />
+    <Compile Include="Run.cs" />
+    <Compile Include="Stop.cs" />
+    <Compile Include="TimetableEntry.cs" />
+    <Compile Include="TimetableFlag.cs" />
+    <Compile Include="TransportType.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net45+wp80+win8+wpa81+aspnetcore50\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.0.5.2.14286\lib\portable-net40+sl50+win+wpa81+wp80\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto.Abstractions">
+      <HintPath>..\packages\PCLCrypto.0.5.2.14286\lib\portable-net40+sl50+win+wpa81+wp80\PCLCrypto.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.0.5.14286\lib\portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch\Validation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

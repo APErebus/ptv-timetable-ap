@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>ptv.timetable.api</id>
+        <version>$version$</version>
+        <title>PTV Timetable API</title>
+        <authors>Alastair Pitts</authors>
+        <owners>Alastair Pitts</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>My package description.</description>
+        <language>en-US</language>
+        <tags>api</tags>
+    </metadata>
+    <files>
+        <file src="src\Ptv.Timetable.Api\bin\$configuration$\Ptv.Timetable.Api.dll" target="lib\portable-net45+win8\Ptv.Timetable.Api.dll" />
+    </files>
+</package>
