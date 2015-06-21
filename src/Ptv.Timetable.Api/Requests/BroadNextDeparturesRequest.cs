@@ -2,7 +2,7 @@
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class BroadNextDeparturesRequest : IPtvRequest
+    class BroadNextDeparturesRequest : IRequest
     {
         private readonly TransportType _transportType;
         private readonly int _stopId;

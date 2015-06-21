@@ -77,10 +77,12 @@ namespace Ptv.Timetable.Api
             return GetApiResponseAsync<LinesByModeResponse>(new LinesByModeRequest(transportType, nameFilter));
         }
 
-        //public Task<> ListDisruptionsAsync()
-        //{
-            
-        //}
+        public Task<DisruptionsResponse> ListDisruptionsAsync(params DisruptionMode[] disruptionModes)
+        {
+            if (disruptionModes == null) throw new ArgumentNullException("disruptionModes");
+
+            return GetApiResponseAsync<DisruptionsResponse>(new DisruptionsRequest(disruptionModes));
+        }
 
         public Task<NextDeparturesResponse> ListSpecificNextDeparturesAsync(TransportType transportType, int lineId, int stopId, int directionId, int limit, DateTime? specifiedUtcTime = null)
         {
@@ -128,7 +130,7 @@ namespace Ptv.Timetable.Api
 
         #region Helper Methods
 
-        private async Task<TResponse> GetApiResponseAsync<TResponse>(IPtvRequest request)
+        private async Task<TResponse> GetApiResponseAsync<TResponse>(IRequest request)
         {
             //build the raw request URL
             var requestUrl = request.BuildRequestUrl();

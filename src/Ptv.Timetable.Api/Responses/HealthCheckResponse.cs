@@ -2,7 +2,7 @@
 
 namespace Ptv.Timetable.Api.Responses
 {
-    public sealed class HealthCheckResponse
+    public class HealthCheckResponse
     {
         [JsonProperty("securityTokenOK")]
         public bool IsSecurityTokenValid { get; set; }

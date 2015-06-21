@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class HealthCheckRequest : IPtvRequest
+    class HealthCheckRequest : IRequest
     {
         private const string Url = "/v2/healthcheck?timestamp={0}";
 

@@ -2,7 +2,7 @@
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class StopsNearbyRequest : IPtvRequest
+    class StopsNearbyRequest : IRequest
     {
         private readonly double _latitude;
         private readonly double _longitude;

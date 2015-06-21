@@ -5,7 +5,7 @@ using Ptv.Timetable.Api.Converters;
 namespace Ptv.Timetable.Api.Responses
 {
     [JsonConverter(typeof(StopsForLineConverter))]
-    public sealed class StopsForLineResponse
+    public class StopsForLineResponse
     {
         public StopsForLineResponse()
         {

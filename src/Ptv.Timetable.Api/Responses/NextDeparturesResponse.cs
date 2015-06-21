@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Ptv.Timetable.Api.Responses
 {
-    public sealed class NextDeparturesResponse
+    public class NextDeparturesResponse
     {
         public NextDeparturesResponse()
         {

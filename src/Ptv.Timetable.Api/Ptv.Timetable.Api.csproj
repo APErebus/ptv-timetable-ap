@@ -43,7 +43,10 @@
     <Compile Include="Converters\StopsNearbyConverter.cs" />
     <Compile Include="Converters\TimetableFlagConverter.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="Requests\IPtvRequest.cs" />
+    <Compile Include="Disruption.cs" />
+    <Compile Include="DisruptionMode.cs" />
+    <Compile Include="Requests\DisruptionsRequest.cs" />
+    <Compile Include="Requests\IRequest.cs" />
     <Compile Include="IPtvTimetableService.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Outlet.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Requests\StoppingPatternRequest.cs" />
     <Compile Include="Requests\StopsForLineRequest.cs" />
     <Compile Include="Requests\StopsNearbyRequest.cs" />
+    <Compile Include="Responses\DisruptionsResponse.cs" />
     <Compile Include="Responses\HealthCheckResponse.cs" />
     <Compile Include="Responses\LinesByModeResponse.cs" />
     <Compile Include="Responses\NextDeparturesResponse.cs" />

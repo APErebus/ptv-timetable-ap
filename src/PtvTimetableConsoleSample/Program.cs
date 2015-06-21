@@ -32,7 +32,12 @@ namespace PtvTimetableConsoleSample
             Console.WriteLine("Checking Lines By Modes...");
             var linesByMode = await ptvService.ListLinesByModeAsync(TransportType.Train);
             foreach (var line in linesByMode.Lines)
-                Console.WriteLine("Line: {0}", line.Name);  
+                Console.WriteLine("Line: {0}", line.Name);
+
+            Console.WriteLine("Checking Disruptions...");
+            var disruptionResponse = await ptvService.ListDisruptionsAsync(DisruptionMode.MetroBus,DisruptionMode.MetroTrain,DisruptionMode.MetroTram);
+            foreach (var disruption in disruptionResponse.MetroBusDisruptions)
+                Console.WriteLine("Metro Bus: {0}", disruption.Title);  
 
             Console.Read();
         }

@@ -5,7 +5,7 @@ using Ptv.Timetable.Api;
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class PointsOfInterestRequest : IPtvRequest
+    class PointsOfInterestRequest : IRequest
     {
         private readonly IEnumerable<PointOfInterestType> _filterTypes;
         private readonly double _topLeftLatitude;

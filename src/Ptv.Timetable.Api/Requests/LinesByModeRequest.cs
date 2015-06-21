@@ -2,7 +2,7 @@
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class LinesByModeRequest : IPtvRequest
+    class LinesByModeRequest : IRequest
     {
         private readonly TransportType _transportType;
         private readonly string _nameFilter;

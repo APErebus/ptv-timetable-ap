@@ -4,7 +4,7 @@ using Ptv.Timetable.Api.Converters;
 
 namespace Ptv.Timetable.Api.Responses
 {
-    [JsonConverter(typeof(StopsNearbyConverter) )]
+    [JsonConverter(typeof(StopsNearbyConverter))]
     public class StopsNearbyResponse
     {
         public StopsNearbyResponse()

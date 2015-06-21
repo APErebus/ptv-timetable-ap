@@ -1,6 +1,6 @@
 ﻿namespace Ptv.Timetable.Api.Requests
 {
-    interface IPtvRequest
+    interface IRequest
     {
         string BuildRequestUrl();
     }

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class SearchRequest : IPtvRequest
+    class SearchRequest : IRequest
     {
         private readonly string _searchTerm;
 

@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace Ptv.Timetable.Api.Requests
 {
-    class StoppingPatternRequest : IPtvRequest
+    class StoppingPatternRequest : IRequest
     {
         private readonly TransportType _transportType;
         private readonly int _runId;

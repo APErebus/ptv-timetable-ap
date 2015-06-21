@@ -5,7 +5,7 @@ using Ptv.Timetable.Api.Converters;
 namespace Ptv.Timetable.Api.Responses
 {
     [JsonConverter(typeof(SearchResponseConverter))]
-    public sealed class SearchResponse
+    public class SearchResponse
     {
         public SearchResponse()
         {
