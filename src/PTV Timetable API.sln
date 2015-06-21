@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C29EFD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ptv.Timetable.Api", "Ptv.Timetable.Api\Ptv.Timetable.Api.csproj", "{DD67859E-343D-43D0-AE53-0FC73E9942E2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{809EEC6A-8A06-4688-80DD-1B903E15100E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PtvTimetableConsoleSample", "PtvTimetableConsoleSample\PtvTimetableConsoleSample.csproj", "{01948164-7645-4511-94FF-81423FA47418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,8 +26,15 @@ Global
 		{DD67859E-343D-43D0-AE53-0FC73E9942E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD67859E-343D-43D0-AE53-0FC73E9942E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD67859E-343D-43D0-AE53-0FC73E9942E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01948164-7645-4511-94FF-81423FA47418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01948164-7645-4511-94FF-81423FA47418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01948164-7645-4511-94FF-81423FA47418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01948164-7645-4511-94FF-81423FA47418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{01948164-7645-4511-94FF-81423FA47418} = {809EEC6A-8A06-4688-80DD-1B903E15100E}
 	EndGlobalSection
 EndGlobal

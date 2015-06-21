@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ptv.timetable.api</id>
-        <version>$version$</version>
+        <version>1.0.0</version>
         <title>PTV Timetable API</title>
         <authors>Alastair Pitts</authors>
         <owners>Alastair Pitts</owners>
@@ -10,8 +10,11 @@
         <description>My package description.</description>
         <language>en-US</language>
         <tags>api</tags>
+        <dependencies>
+            <dependency id="PCLCrypto" version="0.5.2.14286" />
+        </dependencies>
     </metadata>
     <files>
-        <file src="src\Ptv.Timetable.Api\bin\$configuration$\Ptv.Timetable.Api.dll" target="lib\portable-net45+win8\Ptv.Timetable.Api.dll" />
+        <file src="src\Ptv.Timetable.Api\bin\Release\Ptv.Timetable.Api.dll" target="lib\portable-net45+win8\Ptv.Timetable.Api.dll" />
     </files>
 </package>
