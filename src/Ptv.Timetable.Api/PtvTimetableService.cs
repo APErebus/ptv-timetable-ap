@@ -35,17 +35,17 @@ namespace Ptv.Timetable.Api
             _httpClient = new HttpClient(handler);
         }
 
-        public async Task<HealthCheckResponse> PerformHealthCheckAsync()
+        public Task<HealthCheckResponse> PerformHealthCheckAsync()
         {
-            return await GetApiResponseAsync<HealthCheckResponse>(new HealthCheckRequest());
+            return GetApiResponseAsync<HealthCheckResponse>(new HealthCheckRequest());
         }
 
-        public async Task<StopsNearbyResponse> GetStopsNearbyAsync(double latitude, double longitude)
+        public Task<StopsNearbyResponse> GetStopsNearbyAsync(double latitude, double longitude)
         {
-            return await GetApiResponseAsync<StopsNearbyResponse>(new StopsNearbyRequest(latitude, longitude));
+            return GetApiResponseAsync<StopsNearbyResponse>(new StopsNearbyRequest(latitude, longitude));
         }
 
-        public async Task<PointsOfInterestResponse> GetPointsOfInterestAsync(
+        public Task<PointsOfInterestResponse> GetPointsOfInterestAsync(
             IEnumerable<PointOfInterestType> filterTypes,
             double topLeftLatitude,
             double topLeftLogitude,
@@ -54,32 +54,53 @@ namespace Ptv.Timetable.Api
             int gridDepth,
             int limit)
         {
-            return await GetApiResponseAsync<PointsOfInterestResponse>(new PointsOfInterestRequest(filterTypes, topLeftLatitude, topLeftLogitude, bottomRightLatitude, bottomRightLongitude, gridDepth, limit));
+            return GetApiResponseAsync<PointsOfInterestResponse>(new PointsOfInterestRequest(filterTypes, topLeftLatitude, topLeftLogitude, bottomRightLatitude, bottomRightLongitude, gridDepth, limit));
         }
 
-        public async Task<SearchResponse> PerformSearchAsync(string searchTerm)
+        public Task<SearchResponse> PerformSearchAsync(string searchTerm)
         {
-            return await GetApiResponseAsync<SearchResponse>(new SearchRequest(searchTerm));
+            return GetApiResponseAsync<SearchResponse>(new SearchRequest(searchTerm));
         }
 
-        public async Task<NextDeparturesResponse> ListBroadNextDeparturesAsync(TransportType transportType, int stopId, int limit)
+        public Task<NextDeparturesResponse> ListBroadNextDeparturesAsync(TransportType transportType, int stopId, int limit)
         {
-            return await GetApiResponseAsync<NextDeparturesResponse>(new BroadNextDeparturesRequest(transportType, stopId, limit));
+            return GetApiResponseAsync<NextDeparturesResponse>(new BroadNextDeparturesRequest(transportType, stopId, limit));
         }
 
-        public async Task<NextDeparturesResponse> ListSpecificNextDeparturesAsync(TransportType transportType, int lineId, int stopId, int directionId, int limit, DateTime? specifiedUtcTime = null)
+        public Task<LinesByModeResponse> ListLinesByModeAsync(TransportType transportType)
         {
-            return await GetApiResponseAsync<NextDeparturesResponse>(new SpecificNextDeparturesRequest(transportType, lineId, stopId, directionId, limit, specifiedUtcTime));
+            return ListLinesByModeAsync(transportType, null);
         }
 
-        public async Task<StoppingPatternResponse> GetStoppingPatternAsync(TransportType transportType, int runId, int stopId, DateTime requestUtcTime)
+        public Task<LinesByModeResponse> ListLinesByModeAsync(TransportType transportType, string nameFilter)
         {
-            return await GetApiResponseAsync<StoppingPatternResponse>(new StoppingPatternRequest(transportType, runId, stopId, requestUtcTime));
+            return GetApiResponseAsync<LinesByModeResponse>(new LinesByModeRequest(transportType, nameFilter));
         }
 
-        public async Task<StopsForLineResponse> ListStopsForLineAsync(TransportType transportType, int lineId)
+        //public Task<> ListDisruptionsAsync()
+        //{
+            
+        //}
+
+        public Task<NextDeparturesResponse> ListSpecificNextDeparturesAsync(TransportType transportType, int lineId, int stopId, int directionId, int limit, DateTime? specifiedUtcTime = null)
         {
-            return await GetApiResponseAsync<StopsForLineResponse>(new StopsForLineRequest(transportType, lineId));
+            return GetApiResponseAsync<NextDeparturesResponse>(new SpecificNextDeparturesRequest(transportType, lineId, stopId, directionId, limit, specifiedUtcTime));
+        }
+
+        //this is the GTFS input
+        //public Task<NextDeparturesResponse> ListSpecificNextDepaturesAsync()
+        //{
+            
+        //}
+
+        public Task<StoppingPatternResponse> GetStoppingPatternAsync(TransportType transportType, int runId, int stopId, DateTime requestUtcTime)
+        {
+            return GetApiResponseAsync<StoppingPatternResponse>(new StoppingPatternRequest(transportType, runId, stopId, requestUtcTime));
+        }
+
+        public Task<StopsForLineResponse> ListStopsForLineAsync(TransportType transportType, int lineId)
+        {
+            return GetApiResponseAsync<StopsForLineResponse>(new StopsForLineRequest(transportType, lineId));
         }
 
         public async Task<byte[]> GetLineMapAsync(int lineId)

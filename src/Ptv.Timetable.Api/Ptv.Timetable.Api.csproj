@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Converters\LinesByModeConverter.cs" />
     <Compile Include="Converters\PointsOfInterestLocationsConverter.cs" />
     <Compile Include="Converters\SearchResponseConverter.cs" />
     <Compile Include="Converters\StopsForLineConverter.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="RequestSigner.cs" />
     <Compile Include="Requests\BroadNextDeparturesRequest.cs" />
     <Compile Include="Requests\HealthCheckRequest.cs" />
+    <Compile Include="Requests\LinesByModeRequest.cs" />
     <Compile Include="Requests\PointsOfInterestRequest.cs" />
     <Compile Include="Requests\SearchRequest.cs" />
     <Compile Include="Requests\SpecificNextDeparturesRequest.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Requests\StopsForLineRequest.cs" />
     <Compile Include="Requests\StopsNearbyRequest.cs" />
     <Compile Include="Responses\HealthCheckResponse.cs" />
+    <Compile Include="Responses\LinesByModeResponse.cs" />
     <Compile Include="Responses\NextDeparturesResponse.cs" />
     <Compile Include="Responses\PointsOfInterestResponse.cs" />
     <Compile Include="Responses\SearchResponse.cs" />
@@ -89,7 +92,7 @@
       <HintPath>..\packages\PCLCrypto.0.5.2.14286\lib\portable-net40+sl50+win+wpa81+wp80\PCLCrypto.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Validation">
-      <HintPath>..\packages\Validation.2.0.5.14286\lib\portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch\Validation.dll</HintPath>
+      <HintPath>..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

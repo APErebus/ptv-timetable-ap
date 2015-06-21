@@ -31,5 +31,7 @@ namespace Ptv.Timetable.Api
         Task<StopsForLineResponse> ListStopsForLineAsync(TransportType transportType, int lineId);
 
         Task<byte[]> GetLineMapAsync(int lineId);
+        Task<LinesByModeResponse> ListLinesByModeAsync(TransportType transportType);
+        Task<LinesByModeResponse> ListLinesByModeAsync(TransportType transportType, string nameFilter);
     }
 }
